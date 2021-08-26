@@ -4,13 +4,15 @@
 
 <p align="center">
 <a href="https://packagist.org/packages/keljtanoski/modular-laravel"><img src="https://img.shields.io/packagist/dt/keljtanoski/modular-laravel" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Laravel Latest Stable Version"></a>
+<a href="https://packagist.org/packages/keljtanoski/modular-laravel"><img src="https://img.shields.io/packagist/v/keljtanoski/modular-laravel" alt="Modular Laravel Latest Stable Version"></a>
+<a href="https://packagist.org/packages/keljtanoski/modular-laravel"><img src="https://img.shields.io/packagist/l/keljtanoski/modular-laravel" alt="License"></a>
 </p>
 
 ## About Modular Laravel
 
 This project is a personal blueprint starter with customized modular / soa architecture.
+
 
 [comment]: <> (## Learning Laravel)
 
@@ -26,39 +28,55 @@ This project is a personal blueprint starter with customized modular / soa archi
 
 [comment]: <> (## Laravel Sponsors)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in
-becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+[comment]: <> (We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in)
 
-### Premium Partners
+[comment]: <> (becoming a sponsor, please visit the Laravel [Patreon page]&#40;https://patreon.com/taylorotwell&#41;.)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+[comment]: <> (### Premium Partners)
 
-## Contributing
+[comment]: <> (- **[Vehikl]&#40;https://vehikl.com/&#41;**)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in
-the [Laravel documentation](https://laravel.com/docs/contributions).
+[comment]: <> (- **[Tighten Co.]&#40;https://tighten.co&#41;**)
 
-## Code of Conduct
+[comment]: <> (- **[Kirschbaum Development Group]&#40;https://kirschbaumdevelopment.com&#41;**)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by
-the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+[comment]: <> (- **[64 Robots]&#40;https://64robots.com&#41;**)
 
-## Security Vulnerabilities
+[comment]: <> (- **[Cubet Techno Labs]&#40;https://cubettech.com&#41;**)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell
-via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+[comment]: <> (- **[Cyber-Duck]&#40;https://cyber-duck.co.uk&#41;**)
+
+[comment]: <> (- **[Many]&#40;https://www.many.co.uk&#41;**)
+
+[comment]: <> (- **[Webdock, Fast VPS Hosting]&#40;https://www.webdock.io/en&#41;**)
+
+[comment]: <> (- **[DevSquad]&#40;https://devsquad.com&#41;**)
+
+[comment]: <> (- **[Curotec]&#40;https://www.curotec.com/services/technologies/laravel/&#41;**)
+
+[comment]: <> (- **[OP.GG]&#40;https://op.gg&#41;**)
+
+[comment]: <> (- **[CMS Max]&#40;https://www.cmsmax.com/&#41;**)
+
+[comment]: <> (- **[WebReinvent]&#40;https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors&#41;**)
+
+[comment]: <> (## Contributing)
+
+[comment]: <> (Thank you for considering contributing to the Laravel framework! The contribution guide can be found in)
+
+[comment]: <> (the [Laravel documentation]&#40;https://laravel.com/docs/contributions&#41;.)
+
+[comment]: <> (## Code of Conduct)
+
+[comment]: <> (In order to ensure that the Laravel community is welcoming to all, please review and abide by)
+
+[comment]: <> (the [Code of Conduct]&#40;https://laravel.com/docs/contributions#code-of-conduct&#41;.)
+
+[comment]: <> (## Security Vulnerabilities)
+
+[comment]: <> (If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell)
+
+[comment]: <> (via [taylor@laravel.com]&#40;mailto:taylor@laravel.com&#41;. All security vulnerabilities will be promptly addressed.)
 
 ## License
 
