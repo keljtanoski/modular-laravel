@@ -16,9 +16,111 @@ This project is a personal blueprint starter with customized modular / soa archi
 
 [Kostadin Keljtanoski](https://keljtanoski.github.io)
 
-## How to install
+## Install
 
 `composer create-project keljtanoski/modular-laravel`
+
+## Core structure
+
+```
+app
+├── Modules
+│   └── Core
+│       ├── Abstracts
+|       |   └── QueryFilter.php
+│       ├── Builders
+|       |   └── FilterBuilder.php
+│       ├── Controllers
+│       |   ├── ApiController.php
+|       |   └── Controller.php
+│       ├── Exceptions
+│       |   ├── FormRequestTableNotFoundException.php
+│       |   ├── GeneralException.php
+│       |   ├── GeneralIndexException.php
+│       |   ├── GeneralSearchException.php
+│       |   ├── GeneralStoreException.php
+│       |   ├── GeneralNotFoundException.php
+│       |   ├── GeneralDestroyException.php
+|       |   └── GeneralUpdateException.php
+│       ├── Helpers
+|       |   └── Helper.php
+│       ├── Interfaces
+│       |   ├── FilterInterface.php
+│       |   ├── SearchInterface.php
+|       |   └── RepositoryInterface.php
+│       ├── Models
+|       |   └── .gitkeep
+│       ├── Repositories
+|       |   └── Repository.php
+│       ├── Requests
+│       |   ├── FormRequest.php
+│       |   ├── CreateFormRequest.php
+│       |   ├── DeleteFormRequest.php
+│       |   ├── SearchFormRequest.php
+│       |   ├── UpdateFormRequest.php
+|       |   └── ShowFormRequest.php
+│       ├── Resources
+│       |   ├── EmptyResource.php
+|       |   └── EmptyResourceCollection.php
+│       ├── Scopes
+|       |   └── .gitkeep
+│       ├── Traits
+│       |   ├── ApiResponses.php
+|       |   └── Filterable.php
+│       └── 
+└── 
+```
+
+## Example Module structure
+
+```
+app
+├── Modules
+│   └── Example
+│       ├── Config
+|       |   └── .gitkeep
+│       ├── Controllers
+│       │   ├── Api
+│       │   │   └── ExamplesController.php
+|       |   └── ExamplesController.php
+│       ├── Exceptions
+│       |   ├── ExampleDestroyException.php
+│       |   ├── ExampleIndexException.php
+│       |   ├── ExampleNotFoundException.php
+│       |   ├── ExampleSearchException.php
+│       |   ├── ExampleStoreException.php
+|       |   └── ExampleUpdateException.php
+│       ├── Filters
+│       |   ├── ExampleType.php
+│       |   ├── ExampleTypeId.php
+│       |   ├── IsActive.php
+|       |   └── Name.php
+│       ├── Helpers
+|       |   └── .gitkeep
+│       ├── Interfaces
+|       |   └── ExampleInterface.php
+│       ├── Models
+|       |   └── Example.php
+│       ├── Repositories
+|       |   └── ExampleRepository.php
+│       ├── Requests
+│       |   ├── CreateExampleRequest.php
+│       |   ├── DeleteExampleRequest.php
+│       |   ├── SearchExampleRequest.php
+│       |   ├── ShowExampleRequest.php
+|       |   └── UpdateExampleRequest.php
+│       ├── Resources
+|       |   └── ExampleResource.php
+│       ├── routes
+│       |   ├── api.php
+|       |   └── web.php
+│       ├── Services
+|       |   └── ExampleService.php
+│       ├── Traits
+|       |   └── .gitkeep
+│       └──
+└── 
+```
 
 ## License
 
