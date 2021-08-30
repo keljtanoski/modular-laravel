@@ -110,6 +110,10 @@ app
 │       |   ├── ShowExampleRequest.php
 |       |   └── UpdateExampleRequest.php
 │       ├── Resources
+│       |   ├── lang
+|       |   |   └── .gitkeep
+│       |   ├── views
+|       |   |   └── create.blade.php
 |       |   └── ExampleResource.php
 │       ├── routes
 │       |   ├── api.php
