@@ -6,17 +6,17 @@
 <a href="https://packagist.org/packages/keljtanoski/modular-laravel"><img src="https://img.shields.io/packagist/dt/keljtanoski/modular-laravel" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Laravel Latest Stable Version"></a>
 <a href="https://packagist.org/packages/keljtanoski/modular-laravel"><img src="https://img.shields.io/packagist/v/keljtanoski/modular-laravel" alt="Modular Laravel Latest Stable Version"></a>
-
-[comment]: <> (<a href="https://packagist.org/packages/keljtanoski/modular-laravel"><img src="https://img.shields.io/packagist/l/keljtanoski/modular-laravel" alt="License"></a>)
 </p>
 
 ## About Modular Laravel
 
-This project is a personal blueprint starter with customized modular / soa architecture.
+This project is a personal blueprint starter with customized modular / SOA architecture.
 
 [Kostadin Keljtanoski](https://keljtanoski.github.io)
 
 ## Install
+
+You can create new Modular Laravel project using composer
 
 `composer create-project keljtanoski/modular-laravel`
 
@@ -60,13 +60,15 @@ app
 │       |   ├── UpdateFormRequest.php
 |       |   └── ShowFormRequest.php
 │       ├── Resources
-│       |   ├── EmptyResource.php
-|       |   └── EmptyResourceCollection.php
+│       |   └── .gitkeep 
 │       ├── Scopes
 |       |   └── .gitkeep
 │       ├── Traits
 │       |   ├── ApiResponses.php
 |       |   └── Filterable.php
+│       ├── Transformers
+│       |   ├── EmptyResource.php
+|       |   └── EmptyResourceCollection.php
 │       └── 
 └── 
 ```
@@ -112,9 +114,8 @@ app
 │       ├── Resources
 │       |   ├── lang
 |       |   |   └── .gitkeep
-│       |   ├── views
-|       |   |   └── create.blade.php
-|       |   └── ExampleResource.php
+│       |   └── views
+|       |       └── create.blade.php
 │       ├── routes
 │       |   ├── api.php
 |       |   └── web.php
@@ -122,6 +123,8 @@ app
 |       |   └── ExampleService.php
 │       ├── Traits
 |       |   └── .gitkeep
+│       ├── Transformers
+|       |   └── ExampleResource.php
 │       └──
 └── 
 ```
