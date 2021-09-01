@@ -2,7 +2,9 @@
 
 namespace App\Modules\Example\Exceptions;
 
-class ExampleNotFoundException extends \App\Modules\Core\Exceptions\GeneralNotFoundException
+use App\Modules\Core\Exceptions\GeneralNotFoundException;
+
+class ExampleNotFoundException extends GeneralNotFoundException
 {
 
 }

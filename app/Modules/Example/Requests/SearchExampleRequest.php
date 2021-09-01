@@ -2,9 +2,10 @@
 
 namespace App\Modules\Example\Requests;
 
+use App\Modules\Core\Requests\SearchFormRequest;
 use Illuminate\Validation\Rule;
 
-class SearchExampleRequest extends \App\Modules\Core\Requests\SearchFormRequest
+class SearchExampleRequest extends SearchFormRequest
 {
     protected $table = 'examples';
 
@@ -16,12 +17,12 @@ class SearchExampleRequest extends \App\Modules\Core\Requests\SearchFormRequest
     public function rules(): array
     {
         return [
-            'name' => 'sometimes',
-            'example_type_id' => 'sometimes',
-            'example_type' => 'sometimes',
-            'list' => 'sometimes|boolean',
-            'created_at' => 'sometimes',
-            'updated_at' => 'sometimes',
+            'name' => ['sometimes'],
+            'example_type_id' => ['sometimes'],
+            'example_type' => ['sometimes'],
+            'list' => ['sometimes', 'boolean'],
+            'created_at' => ['sometimes'],
+            'updated_at' => ['sometimes'],
             'order_by' => [
                 'sometimes',
                 Rule::in([
@@ -32,8 +33,17 @@ class SearchExampleRequest extends \App\Modules\Core\Requests\SearchFormRequest
                     'created_at',
                     'updated_at',
                 ])],
-            'sort' => 'sometimes|in:asc,desc',
-            'per_page' => 'sometimes|int'
+            'sort' => [
+                'sometimes',
+                Rule::in([
+                    'asc',
+                    'desc'
+                ])
+            ],
+            'per_page' => [
+                'sometimes',
+                'int'
+            ]
         ];
     }
 }

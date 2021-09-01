@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Modules\Example\Resources;
+namespace App\Modules\ExampleType\Transformers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ExampleResource extends JsonResource
+class ExampleTypeResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,7 +18,6 @@ class ExampleResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'example_type_id' => $this->example_type_id,
             'is_active' => $this->is_active,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

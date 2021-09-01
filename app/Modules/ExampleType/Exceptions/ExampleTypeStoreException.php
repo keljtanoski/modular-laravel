@@ -2,7 +2,9 @@
 
 namespace App\Modules\ExampleType\Exceptions;
 
-class ExampleTypeStoreException extends \App\Modules\Core\Exceptions\GeneralStoreException
+use App\Modules\Core\Exceptions\GeneralStoreException;
+
+class ExampleTypeStoreException extends GeneralStoreException
 {
 
 }

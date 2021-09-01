@@ -9,11 +9,18 @@ use App\Modules\ExampleType\Exceptions\ExampleTypeSearchException;
 use App\Modules\ExampleType\Exceptions\ExampleTypeStoreException;
 use App\Modules\ExampleType\Exceptions\ExampleTypeUpdateException;
 use App\Modules\ExampleType\Interfaces\ExampleTypeInterface;
+use Exception;
 
 class ExampleTypeService
 {
+    /**
+     * @var ExampleTypeInterface
+     */
     public $exampleTypeRepository;
 
+    /**
+     * @param ExampleTypeInterface $exampleTypeRepository
+     */
     public function __construct(ExampleTypeInterface $exampleTypeRepository)
     {
         $this->exampleTypeRepository = $exampleTypeRepository;
@@ -28,7 +35,7 @@ class ExampleTypeService
     {
         try {
             return $this->exampleTypeRepository->findById($id);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleTypeNotFoundException($exception);
         }
     }
@@ -41,7 +48,7 @@ class ExampleTypeService
     {
         try {
             return $this->exampleTypeRepository->findAll();
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleTypeIndexException($exception);
         }
     }
@@ -55,7 +62,7 @@ class ExampleTypeService
     {
         try {
             return $this->exampleTypeRepository->create($data);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleTypeStoreException($exception);
         }
     }
@@ -69,7 +76,7 @@ class ExampleTypeService
     {
         try {
             return $this->exampleTypeRepository->update($data['id'], $data);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleTypeUpdateException($exception);
         }
     }
@@ -83,7 +90,7 @@ class ExampleTypeService
     {
         try {
             return $this->exampleTypeRepository->delete($id);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleTypeDestroyException($exception);
         }
     }
@@ -97,7 +104,7 @@ class ExampleTypeService
     {
         try {
             return $this->exampleTypeRepository->search($data);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleTypeSearchException($exception);
         }
     }

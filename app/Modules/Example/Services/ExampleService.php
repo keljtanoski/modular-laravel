@@ -9,6 +9,7 @@ use App\Modules\Example\Exceptions\ExampleSearchException;
 use App\Modules\Example\Exceptions\ExampleStoreException;
 use App\Modules\Example\Exceptions\ExampleUpdateException;
 use App\Modules\Example\Interfaces\ExampleInterface;
+use Exception;
 
 class ExampleService
 {
@@ -28,7 +29,7 @@ class ExampleService
     {
         try {
             return $this->exampleRepository->findById($id);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleNotFoundException($exception);
         }
     }
@@ -41,7 +42,7 @@ class ExampleService
     {
         try {
             return $this->exampleRepository->findAll();
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleIndexException($exception);
         }
     }
@@ -55,7 +56,7 @@ class ExampleService
     {
         try {
             return $this->exampleRepository->create($data);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleStoreException($exception);
         }
     }
@@ -69,7 +70,7 @@ class ExampleService
     {
         try {
             return $this->exampleRepository->update($data['id'], $data);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleUpdateException($exception);
         }
     }
@@ -83,7 +84,7 @@ class ExampleService
     {
         try {
             return $this->exampleRepository->delete($id);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleDestroyException($exception);
         }
     }
@@ -97,7 +98,7 @@ class ExampleService
     {
         try {
             return $this->exampleRepository->search($data);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new ExampleSearchException($exception);
         }
     }

@@ -2,9 +2,10 @@
 
 namespace App\Modules\ExampleType\Requests;
 
+use App\Modules\Core\Requests\UpdateFormRequest;
 use Illuminate\Validation\Rule;
 
-class UpdateExampleTypeRequest extends \App\Modules\Core\Requests\UpdateFormRequest
+class UpdateExampleTypeRequest extends UpdateFormRequest
 {
     protected $table = 'example_types';
 
@@ -17,8 +18,15 @@ class UpdateExampleTypeRequest extends \App\Modules\Core\Requests\UpdateFormRequ
             'id' => [
                 Rule::exists($this->table, 'id')
             ],
-            'name' => ['sometimes', 'string', Rule::unique($this->table)->ignore($this->id)],
-            'is_active' => ['sometimes', 'boolean']
+            'name' => [
+                'sometimes',
+                'string',
+                Rule::unique($this->table)->ignore($this->id)
+            ],
+            'is_active' => [
+                'sometimes',
+                'boolean'
+            ]
         ];
     }
 }

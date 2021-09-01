@@ -51,7 +51,7 @@ return [
 
         'structure' => [
             'controllers' => 'Controllers',
-            'resources' => 'Resources',
+            'resources' => 'Transformers',
             'requests' => 'Requests',
             'models' => 'Models',
             'mails' => 'Mail',
@@ -67,7 +67,8 @@ return [
             'seeds' => 'database/seeds',
             'factories' => 'database/factories',
             'helpers' => '',
-            'filters' => 'Filters'
+            'filters' => 'Filters',
+            'traits' => 'Traits',
         ],
     ],
 

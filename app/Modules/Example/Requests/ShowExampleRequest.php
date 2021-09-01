@@ -2,7 +2,9 @@
 
 namespace App\Modules\Example\Requests;
 
-class ShowExampleRequest extends \App\Modules\Core\Requests\ShowFormRequest
+use App\Modules\Core\Requests\ShowFormRequest;
+
+class ShowExampleRequest extends ShowFormRequest
 {
     protected $table = 'examples';
 }

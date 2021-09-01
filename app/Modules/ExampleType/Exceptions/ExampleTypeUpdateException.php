@@ -2,7 +2,9 @@
 
 namespace App\Modules\ExampleType\Exceptions;
 
-class ExampleTypeUpdateException extends \App\Modules\Core\Exceptions\GeneralUpdateException
+use App\Modules\Core\Exceptions\GeneralUpdateException;
+
+class ExampleTypeUpdateException extends GeneralUpdateException
 {
 
 }
