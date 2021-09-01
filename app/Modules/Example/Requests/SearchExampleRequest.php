@@ -2,9 +2,10 @@
 
 namespace App\Modules\Example\Requests;
 
+use App\Modules\Core\Requests\SearchFormRequest;
 use Illuminate\Validation\Rule;
 
-class SearchExampleRequest extends \App\Modules\Core\Requests\SearchFormRequest
+class SearchExampleRequest extends SearchFormRequest
 {
     protected $table = 'examples';
 

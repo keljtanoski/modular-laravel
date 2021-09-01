@@ -2,7 +2,9 @@
 
 namespace App\Modules\Example\Exceptions;
 
-class ExampleIndexException extends \App\Modules\Core\Exceptions\GeneralIndexException
+use App\Modules\Core\Exceptions\GeneralIndexException;
+
+class ExampleIndexException extends GeneralIndexException
 {
 
 }

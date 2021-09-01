@@ -2,7 +2,9 @@
 
 namespace App\Modules\ExampleType\Exceptions;
 
-class ExampleTypeDestroyException extends \App\Modules\Core\Exceptions\GeneralDestroyException
+use App\Modules\Core\Exceptions\GeneralDestroyException;
+
+class ExampleTypeDestroyException extends GeneralDestroyException
 {
 
 }

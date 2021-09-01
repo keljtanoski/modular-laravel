@@ -7,8 +7,14 @@ use App\Modules\Example\Services\ExampleService;
 
 class ExamplesController extends Controller
 {
+    /**
+     * @var ExampleService
+     */
     protected $exampleService;
 
+    /**
+     * @param ExampleService $exampleService
+     */
     public function __construct(ExampleService $exampleService)
     {
         $this->exampleService = $exampleService;

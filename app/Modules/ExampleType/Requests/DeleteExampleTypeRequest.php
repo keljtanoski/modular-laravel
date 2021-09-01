@@ -2,7 +2,9 @@
 
 namespace App\Modules\ExampleType\Requests;
 
-class DeleteExampleTypeRequest extends \App\Modules\Core\Requests\DeleteFormRequest
+use App\Modules\Core\Requests\DeleteFormRequest;
+
+class DeleteExampleTypeRequest extends DeleteFormRequest
 {
     protected $table = 'example_types';
 }

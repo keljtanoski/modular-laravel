@@ -2,9 +2,10 @@
 
 namespace App\Modules\Example\Requests;
 
+use App\Modules\Core\Requests\UpdateFormRequest;
 use Illuminate\Validation\Rule;
 
-class UpdateExampleRequest extends \App\Modules\Core\Requests\UpdateFormRequest
+class UpdateExampleRequest extends UpdateFormRequest
 {
     protected $table = 'examples';
 

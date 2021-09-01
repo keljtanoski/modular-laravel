@@ -2,9 +2,10 @@
 
 namespace App\Modules\Example\Requests;
 
+use App\Modules\Core\Requests\CreateFormRequest;
 use Illuminate\Validation\Rule;
 
-class CreateExampleRequest extends \App\Modules\Core\Requests\CreateFormRequest
+class CreateExampleRequest extends CreateFormRequest
 {
     protected $table = 'examples';
 
