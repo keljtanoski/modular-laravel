@@ -126,6 +126,41 @@ app
 └── 
 ```
 
+##Route list
+
+```
++----------+---------------------------+---------------------------+------------------------------------------------------------------------+---------------+
+| Method   | URI                       | Name                      | Action                                                                 | Middleware    |
++----------+---------------------------+---------------------------+------------------------------------------------------------------------+---------------+
+| POST     | api/v1/example-types      | api.example_types.store   | App\Modules\ExampleType\Controllers\Api\ExampleTypesController@store   | api           |
+| GET|HEAD | api/v1/example-types      | api.example_types.index   | App\Modules\ExampleType\Controllers\Api\ExampleTypesController@index   | api           |
+| DELETE   | api/v1/example-types/{id} | api.example_types.destroy | App\Modules\ExampleType\Controllers\Api\ExampleTypesController@destroy | api           |
+| PATCH    | api/v1/example-types/{id} | api.example_types.update  | App\Modules\ExampleType\Controllers\Api\ExampleTypesController@update  | api           |
+| GET|HEAD | api/v1/example-types/{id} | api.example_types.show    | App\Modules\ExampleType\Controllers\Api\ExampleTypesController@show    | api           |
+| GET|HEAD | api/v1/examples           | api.examples.index        | App\Modules\Example\Controllers\Api\ExamplesController@index           | api           |
+| POST     | api/v1/examples           | api.examples.store        | App\Modules\Example\Controllers\Api\ExamplesController@store           | api           |
+| GET|HEAD | api/v1/examples/{id}      | api.examples.show         | App\Modules\Example\Controllers\Api\ExamplesController@show            | api           |
+| PATCH    | api/v1/examples/{id}      | api.examples.update       | App\Modules\Example\Controllers\Api\ExamplesController@update          | api           |
+| DELETE   | api/v1/examples/{id}      | api.examples.destroy      | App\Modules\Example\Controllers\Api\ExamplesController@destroy         | api           |
+| POST     | example-types             | example_types.store       | App\Modules\ExampleType\Controllers\ExampleTypesController@store       | web           |
+| GET|HEAD | example-types             | example_types.index       | App\Modules\ExampleType\Controllers\ExampleTypesController@index       | web           |
+| GET|HEAD | example-types/create      | example_types.create      | App\Modules\ExampleType\Controllers\ExampleTypesController@create      | web           |
+| GET|HEAD | example-types/{id}        | example_types.show        | App\Modules\ExampleType\Controllers\ExampleTypesController@show        | web           |
+| PATCH    | example-types/{id}        | example_types.update      | App\Modules\ExampleType\Controllers\ExampleTypesController@update      | web           |
+| DELETE   | example-types/{id}        | example_types.destroy     | App\Modules\ExampleType\Controllers\ExampleTypesController@destroy     | web           |
+| GET|HEAD | example-types/{id}/edit   | example_types.edit        | App\Modules\ExampleType\Controllers\ExampleTypesController@edit        | web           |
+| GET|HEAD | examples                  | examples.index            | App\Modules\Example\Controllers\ExamplesController@index               | web           |
+| POST     | examples                  | examples.store            | App\Modules\Example\Controllers\ExamplesController@store               | web           |
+| GET|HEAD | examples/create           | examples.create           | App\Modules\Example\Controllers\ExamplesController@create              | web           |
+| DELETE   | examples/{id}             | examples.destroy          | App\Modules\Example\Controllers\ExamplesController@destroy             | web           |
+| PATCH    | examples/{id}             | examples.update           | App\Modules\Example\Controllers\ExamplesController@update              | web           |
+| GET|HEAD | examples/{id}             | examples.show             | App\Modules\Example\Controllers\ExamplesController@show                | web           |
+| GET|HEAD | examples/{id}/edit        | examples.edit             | App\Modules\Example\Controllers\ExamplesController@edit                | web           |
++----------+---------------------------+---------------------------+------------------------------------------------------------------------+---------------+
+
+
+```
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

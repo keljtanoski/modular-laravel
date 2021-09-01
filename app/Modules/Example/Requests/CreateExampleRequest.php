@@ -15,9 +15,19 @@ class CreateExampleRequest extends CreateFormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', Rule::unique($this->table, 'name')],
-            'example_type_id' => ['required', Rule::exists('example_types', 'id')],
-            'is_active' => ['sometimes', 'boolean'],
+            'name' => [
+                'required',
+                'string',
+                Rule::unique($this->table, 'name')
+            ],
+            'example_type_id' => [
+                'required',
+                Rule::exists('example_types', 'id')
+            ],
+            'is_active' => [
+                'sometimes',
+                'boolean'
+            ],
         ];
     }
 }

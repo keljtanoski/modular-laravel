@@ -18,8 +18,15 @@ class UpdateExampleTypeRequest extends UpdateFormRequest
             'id' => [
                 Rule::exists($this->table, 'id')
             ],
-            'name' => ['sometimes', 'string', Rule::unique($this->table)->ignore($this->id)],
-            'is_active' => ['sometimes', 'boolean']
+            'name' => [
+                'sometimes',
+                'string',
+                Rule::unique($this->table)->ignore($this->id)
+            ],
+            'is_active' => [
+                'sometimes',
+                'boolean'
+            ]
         ];
     }
 }
