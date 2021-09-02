@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Core\Abstracts;
+namespace App\Modules\Core\Filters;
 
 abstract class QueryFilter
 {

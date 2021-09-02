@@ -26,10 +26,6 @@ You can create new Modular Laravel project using composer
 app
 ├── Modules
 │   └── Core
-│       ├── Abstracts
-|       |   └── QueryFilter.php
-│       ├── Builders
-|       |   └── FilterBuilder.php
 │       ├── Controllers
 │       |   ├── ApiController.php
 |       |   └── Controller.php
@@ -42,6 +38,9 @@ app
 │       |   ├── GeneralNotFoundException.php
 │       |   ├── GeneralDestroyException.php
 |       |   └── GeneralUpdateException.php
+│       ├── Filters
+│       |   ├── QueryFilter.php
+|       |   └── FilterBuilder.php
 │       ├── Helpers
 |       |   └── Helper.php
 │       ├── Interfaces
@@ -115,6 +114,9 @@ app
 │       |   ├── lang
 |       |   |   └── .gitkeep
 │       |   └── views
+|       |       ├── layouts
+|       |       |   └── master.blade.php
+|       |       ├── index.blade.php
 |       |       └── create.blade.php
 │       ├── routes
 │       |   ├── api.php

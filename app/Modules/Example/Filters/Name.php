@@ -2,7 +2,7 @@
 
 namespace App\Modules\Example\Filters;
 
-use App\Modules\Core\Abstracts\QueryFilter;
+use App\Modules\Core\Filters\QueryFilter;
 use App\Modules\Core\Interfaces\FilterInterface;
 
 class Name extends QueryFilter implements FilterInterface

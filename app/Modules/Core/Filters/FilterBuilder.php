@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Core\Builders;
+namespace App\Modules\Core\Filters;
 
 use Illuminate\Support\Str;
 

@@ -76,12 +76,13 @@ trait ApiResponses
      */
     public function exceptionRespond(Exception $exception, $data = [], $title = 'Error'): JsonResponse
     {
-        return response()->json([
-            'title' => $title,
-            'message' => $exception->getMessage(),
-            'code' => $exception->getCode(),
-//            'data' => $data,
-        ], $exception->getCode());
+        return response()->json(
+            [
+                'title' => $title,
+                'message' => $exception->getMessage(),
+                'code' => $exception->getCode(),
+            ],
+            $exception->getCode());
     }
 
     /**

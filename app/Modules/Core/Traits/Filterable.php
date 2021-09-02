@@ -2,7 +2,7 @@
 
 namespace App\Modules\Core\Traits;
 
-use App\Modules\Core\Builders\FilterBuilder;
+use App\Modules\Core\Filters\FilterBuilder;
 use Illuminate\Support\Str;
 use ReflectionClass;
 
