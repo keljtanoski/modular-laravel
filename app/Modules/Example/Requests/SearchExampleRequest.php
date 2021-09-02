@@ -42,7 +42,7 @@ class SearchExampleRequest extends SearchFormRequest
             ],
             'per_page' => [
                 'sometimes',
-                'int'
+                'integer'
             ]
         ];
     }
