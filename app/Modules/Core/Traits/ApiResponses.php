@@ -26,7 +26,7 @@ trait ApiResponses
      * @param int $code
      * @return $this
      */
-    public function setCode($code = 200)
+    public function setCode(int $code = 200): self
     {
         $this->responseCode = $code;
         return $this;
@@ -36,7 +36,7 @@ trait ApiResponses
      * @param $message
      * @return $this
      */
-    public function setMessage($message)
+    public function setMessage($message): self
     {
         $this->message = $message;
         return $this;
@@ -46,7 +46,7 @@ trait ApiResponses
      * @param $title
      * @return $this
      */
-    public function setTitle($title)
+    public function setTitle($title): self
     {
         $this->title = $title;
         return $this;
@@ -74,7 +74,7 @@ trait ApiResponses
      * @param string $title
      * @return JsonResponse
      */
-    public function exceptionRespond(Exception $exception, $data = [], $title = 'Error'): JsonResponse
+    public function exceptionRespond(Exception $exception, array $data = [], string $title = 'Error'): JsonResponse
     {
         return response()->json([
             'title' => $title,
@@ -89,7 +89,7 @@ trait ApiResponses
      * @param string $title
      * @return JsonResponse
      */
-    public function respondWithExceptionError(Exception $exception, $title = 'Error'): JsonResponse
+    public function respondWithExceptionError(Exception $exception, string $title = 'Error'): JsonResponse
     {
         return response()
             ->json(
