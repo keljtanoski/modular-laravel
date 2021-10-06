@@ -24,6 +24,10 @@ After the project is created run the following commands
 
 `composer install`
 
+Then create storage link
+
+`php artisan storage:link`
+
 ## Core structure
 
 ```
