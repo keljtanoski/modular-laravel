@@ -20,6 +20,10 @@ You can create new Modular Laravel project using composer
 
 `composer create-project keljtanoski/modular-laravel`
 
+After the project is created run the following commands
+
+`composer install`
+
 ## Core structure
 
 ```
