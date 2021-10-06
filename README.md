@@ -32,6 +32,10 @@ Then create storage link
 
 `php artisan storage:link`
 
+Then run the migrations
+
+`php artisan migrate:fresh`
+
 ## Core structure
 
 ```
