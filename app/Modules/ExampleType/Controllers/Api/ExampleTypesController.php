@@ -25,7 +25,7 @@ class ExampleTypesController extends ApiController
     /**
      * @var ExampleTypeService
      */
-    protected $exampleTypeService;
+    private $exampleTypeService;
 
     /**
      * @param ExampleTypeService $exampleTypeService

@@ -11,7 +11,7 @@ class ExamplesController extends Controller
     /**
      * @var ExampleService
      */
-    protected $exampleService;
+    private $exampleService;
 
     /**
      * @param ExampleService $exampleService

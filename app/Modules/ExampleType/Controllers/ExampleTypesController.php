@@ -10,7 +10,7 @@ class ExampleTypesController extends Controller
     /**
      * @var ExampleTypeService
      */
-    protected $exampleTypeService;
+    private $exampleTypeService;
 
     /**
      * @param ExampleTypeService $exampleTypeService
