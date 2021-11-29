@@ -20,6 +20,22 @@ You can create new Modular Laravel project using composer
 
 `composer create-project keljtanoski/modular-laravel`
 
+After the project is created run the following commands
+
+`composer install`
+
+Then generate application key
+
+`php artisan key:generate`
+
+Then create storage link
+
+`php artisan storage:link`
+
+Then run the migrations
+
+`php artisan migrate:fresh`
+
 ## Core structure
 
 ```
