@@ -108,11 +108,11 @@ class ModuleServiceProvider extends ServiceProvider
         $file = str_replace('//', '/', app_path(
             Config::get('modules.default.directory')
             . DIRECTORY_SEPARATOR
-            . (string)($module)
+            . ($module)
             . DIRECTORY_SEPARATOR
-            . (string)($path)
+            . ($path)
             . DIRECTORY_SEPARATOR
-            . (string)($file)));
+            . ($file)));
 
         $allowed = ['web', 'api', 'simple', 'admin'];
         if (in_array($type, $allowed) && $this->files->exists($file)) {
