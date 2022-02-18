@@ -34,7 +34,6 @@ class ExampleTypeRepository extends Repository implements ExampleTypeInterface, 
             }
 
             return $query->paginate(Arr::get($request, 'per_page') ?? (new $this->model)->getPerPage());
-
         } catch (Exception $exception) {
             throw new ExampleTypeSearchException($exception);
         }

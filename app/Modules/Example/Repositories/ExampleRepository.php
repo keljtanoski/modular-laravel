@@ -34,7 +34,6 @@ class ExampleRepository extends Repository implements ExampleInterface, SearchIn
             }
 
             return $query->paginate(Arr::get($request, 'per_page') ?? (new $this->model)->getPerPage());
-
         } catch (Exception $exception) {
             throw new ExampleSearchException($exception);
         }

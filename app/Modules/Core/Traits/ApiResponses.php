@@ -65,7 +65,8 @@ trait ApiResponses
                     'code' => $this->responseCode,
                     'data' => $data
                 ],
-                $this->responseCode);
+                $this->responseCode
+            );
     }
 
     /**
@@ -82,7 +83,8 @@ trait ApiResponses
                 'message' => $exception->getMessage(),
                 'code' => $exception->getCode(),
             ],
-            $exception->getCode());
+            $exception->getCode()
+        );
     }
 
     /**
@@ -98,7 +100,8 @@ trait ApiResponses
                     'title' => $this->title,
                     'message' => $this->message,
                 ],
-                $exception->getCode());
+                $exception->getCode()
+            );
     }
 
     /**

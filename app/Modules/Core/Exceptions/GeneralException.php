@@ -102,7 +102,7 @@ class GeneralException extends Exception
 
     public function render($request): JsonResponse
     {
-        $this->isLog() ? $this->renderLog() : NULL;
+        $this->isLog() ? $this->renderLog() : null;
         return $this->prepareResponse();
     }
 
@@ -128,7 +128,6 @@ class GeneralException extends Exception
     public function renderLog()
     {
         Log::error(print_r($this->getLogResponse(), true));
-
     }
 
     /**

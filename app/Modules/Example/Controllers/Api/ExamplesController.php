@@ -58,10 +58,16 @@ class ExamplesController extends ApiController
     {
         try {
             return $this
-                ->setMessage(__('apiResponse.ok',
-                    ['resource' => Helper::getResourceName(
-                        $this->exampleService->exampleRepository->model)
-                    ]))
+                ->setMessage(
+                    __(
+                        'apiResponse.ok',
+                        [
+                            'resource' => Helper::getResourceName(
+                                $this->exampleService->exampleRepository->model
+                            )
+                        ]
+                    )
+                )
                 ->respond(new ExampleResource($this->exampleService->getById($request->id)));
         } catch (Exception $exception) {
             throw new ExampleNotFoundException($exception);
@@ -77,10 +83,16 @@ class ExamplesController extends ApiController
     {
         try {
             return $this
-                ->setMessage(__('apiResponse.storeSuccess',
-                    ['resource' => Helper::getResourceName(
-                        $this->exampleService->exampleRepository->model)
-                    ]))
+                ->setMessage(
+                    __(
+                        'apiResponse.storeSuccess',
+                        [
+                            'resource' => Helper::getResourceName(
+                                $this->exampleService->exampleRepository->model
+                            )
+                        ]
+                    )
+                )
                 ->respond(new ExampleResource($this->exampleService->create($request->validated())));
         } catch (Exception $exception) {
             throw new ExampleStoreException($exception);
@@ -96,13 +108,22 @@ class ExamplesController extends ApiController
     {
         try {
             return $this
-                ->setMessage(__('apiResponse.updateSuccess',
-                    ['resource' => Helper::getResourceName(
-                        $this->exampleService->exampleRepository->model)
-                    ]))
-                ->respond(new ExampleResource($this->exampleService
-                    ->update($request->validated())
-                ));
+                ->setMessage(
+                    __(
+                        'apiResponse.updateSuccess',
+                        [
+                            'resource' => Helper::getResourceName(
+                                $this->exampleService->exampleRepository->model
+                            )
+                        ]
+                    )
+                )
+                ->respond(
+                    new ExampleResource(
+                        $this->exampleService
+                            ->update($request->validated())
+                    )
+                );
         } catch (Exception $exception) {
             throw new ExampleUpdateException($exception);
         }
@@ -117,10 +138,16 @@ class ExamplesController extends ApiController
     {
         try {
             return $this
-                ->setMessage(__('apiResponse.deleteSuccess',
-                    ['resource' => Helper::getResourceName(
-                        $this->exampleService->exampleRepository->model)
-                    ]))
+                ->setMessage(
+                    __(
+                        'apiResponse.deleteSuccess',
+                        [
+                            'resource' => Helper::getResourceName(
+                                $this->exampleService->exampleRepository->model
+                            )
+                        ]
+                    )
+                )
                 ->respond($this->exampleService->delete($request->id));
         } catch (Exception $exception) {
             throw new ExampleDestroyException($exception);

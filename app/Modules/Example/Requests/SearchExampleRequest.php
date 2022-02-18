@@ -32,7 +32,8 @@ class SearchExampleRequest extends SearchFormRequest
                     'example_type',
                     'created_at',
                     'updated_at',
-                ])],
+                ])
+            ],
             'sort' => [
                 'sometimes',
                 Rule::in([
