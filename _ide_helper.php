@@ -4,7 +4,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 9.6.0.
+ * Generated for Laravel 9.7.0.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -17946,7 +17946,7 @@ namespace  {
                 /**
              * Add a "belongs to" relationship where clause to the query.
              *
-             * @param \Illuminate\Database\Eloquent\Model $related
+             * @param \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection<\Illuminate\Database\Eloquent\Model> $related
              * @param string|null $relationshipName
              * @param string $boolean
              * @return \Illuminate\Database\Eloquent\Builder|static 
@@ -19113,6 +19113,61 @@ namespace  {
             {
                                 /** @var \Illuminate\Database\Query\Builder $instance */
                                 return $instance->orWhereJsonDoesntContain($column, $value);
+            }
+             
+                /**
+             * Add a clause that determines if a JSON path exists to the query.
+             *
+             * @param string $column
+             * @param string $boolean
+             * @param bool $not
+             * @return \Illuminate\Database\Query\Builder 
+             * @static 
+             */ 
+            public static function whereJsonContainsKey($column, $boolean = 'and', $not = false)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->whereJsonContainsKey($column, $boolean, $not);
+            }
+             
+                /**
+             * Add an "or" clause that determines if a JSON path exists to the query.
+             *
+             * @param string $column
+             * @return \Illuminate\Database\Query\Builder 
+             * @static 
+             */ 
+            public static function orWhereJsonContainsKey($column)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->orWhereJsonContainsKey($column);
+            }
+             
+                /**
+             * Add a clause that determines if a JSON path does not exist to the query.
+             *
+             * @param string $column
+             * @param string $boolean
+             * @return \Illuminate\Database\Query\Builder 
+             * @static 
+             */ 
+            public static function whereJsonDoesntContainKey($column, $boolean = 'and')
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->whereJsonDoesntContainKey($column, $boolean);
+            }
+             
+                /**
+             * Add an "or" clause that determines if a JSON path does not exist to the query.
+             *
+             * @param string $column
+             * @return \Illuminate\Database\Query\Builder 
+             * @static 
+             */ 
+            public static function orWhereJsonDoesntContainKey($column)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->orWhereJsonDoesntContainKey($column);
             }
              
                 /**
