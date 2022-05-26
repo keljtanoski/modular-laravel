@@ -15,8 +15,7 @@ class Helper
     public static function getResourceName($class): string
     {
         try {
-            $reflectionClass = new ReflectionClass($class);
-            return $reflectionClass->getShortName();
+            return (new ReflectionClass($class))->getShortName();
         } catch (ReflectionException $exception) {
             return $exception->getMessage();
         }

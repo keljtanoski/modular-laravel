@@ -10,17 +10,17 @@ trait ApiResponses
     /**
      * @var int
      */
-    public $responseCode = 200;
+    public int $responseCode = 200;
 
     /**
      * @var string
      */
-    public $message = 'OK';
+    public string $message = 'OK';
 
     /**
      * @var string
      */
-    public $title = 'Success';
+    public string $title = 'Success';
 
     /**
      * @param int $code

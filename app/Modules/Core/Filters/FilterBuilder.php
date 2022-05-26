@@ -36,7 +36,7 @@ class FilterBuilder
     /**
      * @return mixed
      */
-    public function apply()
+    public function apply(): mixed
     {
         foreach ($this->filters as $name => $value) {
             $normalizedName = Str::ucfirst(Str::camel($name));

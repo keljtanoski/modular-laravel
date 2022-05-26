@@ -13,11 +13,10 @@ trait Filterable
      * @param $filters
      * @return mixed
      */
-    public function scopeFilterBy($query, $filters)
+    public function scopeFilterBy($query, $filters): mixed
     {
         $namespace = $this->getNamespace();
-        $filter = new FilterBuilder($query, $filters, $namespace);
-        return $filter->apply();
+        return (new FilterBuilder($query, $filters, $namespace))->apply();
     }
 
     /**
