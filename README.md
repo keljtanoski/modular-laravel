@@ -1,6 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a>
-</p>
-<p align="center">MODULAR</p>
+![Logo](https://repository-images.githubusercontent.com/400247224/3f248688-2547-4d7b-adea-a10f6ab19b6a)
 
 <p align="center">
 <a href="https://packagist.org/packages/keljtanoski/modular-laravel"><img src="https://img.shields.io/packagist/dt/keljtanoski/modular-laravel" alt="Total Downloads"></a>
