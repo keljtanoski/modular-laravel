@@ -26,18 +26,27 @@ class Handler extends ExceptionHandler
     use ApiResponses;
 
     /**
-     * A list of the exception types that are not reported.
+     * A list of exception types with their corresponding custom log levels.
      *
-     * @var array
+     * @var array<class-string<\Throwable>, \Psr\Log\LogLevel::*>
      */
-    protected $dontReport = [
-        GeneralException::class,
+    protected $levels = [
+        //
     ];
 
     /**
-     * A list of the inputs that are never flashed for validation exceptions.
+     * A list of the exception types that are not reported.
      *
-     * @var array
+     * @var array<int, class-string<\Throwable>>
+     */
+    protected $dontReport = [
+        GeneralException::class
+    ];
+
+    /**
+     * A list of the inputs that are never flashed to the session on validation exceptions.
+     *
+     * @var array<int, string>
      */
     protected $dontFlash = [
         'current_password',
@@ -113,7 +122,10 @@ class Handler extends ExceptionHandler
             $errorCode = $exception->errorInfo[1];
 
             if ($errorCode == 1451) {
-                return $this->errorResponse('Cannot remove this resource permanently. It is related to other resource', 409);
+                return $this->errorResponse(
+                    'Cannot remove this resource permanently. It is related to other resource',
+                    409
+                );
             }
         }
 

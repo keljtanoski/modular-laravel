@@ -16,7 +16,9 @@ class ExampleType extends Model
     protected $table = 'example_types';
 
     /**
-     * @var string[]
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
      */
     protected $fillable = [
         'name',
@@ -24,11 +26,13 @@ class ExampleType extends Model
     ];
 
     /**
-     * @var string[]
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
      */
-    protected $dates = [
-        'created_at',
-        'updated_at'
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     /*
