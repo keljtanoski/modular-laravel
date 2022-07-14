@@ -20,6 +20,10 @@ class CreateExampleRequest extends CreateFormRequest
                 'string',
                 Rule::unique($this->table, 'name')
             ],
+            'description' => [
+                'nullable',
+                'string',
+            ],
             'example_type_id' => [
                 'required',
                 Rule::exists('example_types', 'id')

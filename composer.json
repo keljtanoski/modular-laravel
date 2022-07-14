@@ -27,13 +27,13 @@
         "laravel/tinker": "^2.7"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
         "barryvdh/laravel-ide-helper": "^2.10",
         "fakerphp/faker": "^1.9.1",
-        "laravel/sail": "^1.0.1",
+        "laravel/sail": "^1.15",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
+        "roave/security-advisories": "dev-latest",
         "spatie/laravel-ignition": "^1.0"
     },
     "autoload": {

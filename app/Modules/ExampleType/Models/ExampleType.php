@@ -33,6 +33,7 @@ class ExampleType extends Model
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
+        'is_active' => 'boolean',
     ];
 
     /*

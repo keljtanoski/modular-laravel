@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Modules\ExampleType\Models\ExampleType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ExampleTypeFactory extends Factory
 {
+    protected $model = ExampleType::class;
+
     /**
      * Define the model's default state.
      *
@@ -17,7 +20,10 @@ class ExampleTypeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->word,
+            'is_active' => $this->faker->boolean(70),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }

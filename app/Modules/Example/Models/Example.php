@@ -24,6 +24,7 @@ class Example extends Model
      */
     protected $fillable = [
         'name',
+        'description',
         'example_type_id',
         'is_active',
     ];
@@ -36,6 +37,7 @@ class Example extends Model
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
+        'is_active' => 'boolean',
     ];
 
     /*
