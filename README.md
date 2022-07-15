@@ -34,6 +34,29 @@ Then run the migrations
 
 `php artisan migrate:fresh`
 
+## Laravel Sail
+
+This blueprint comes with Laravel Sail included and default configuration including `mysql` and `redis` in the `docker-composer.yml` file.
+You can select your own setup or preference by running `php artisan sail:install` in the terminal and select the desired configuration.
+
+To start Docker containers run
+
+`./vendor/bin/sail up` 
+
+This will pull the docker images and start the containers.
+
+Alternatively you can run the following command to start the Docker containers in the background
+
+`./vendor/bin/sail up -d`
+
+After the Docker containers are up and ready you can run the following command to run the migrations inside Docker
+
+`./vendor/bin/sail artisan migrate:fresh`
+
+Then run the seeders for the example modules
+
+`./vendor/bin/sail artisan db:seed`
+
 ## Core structure
 
 ```

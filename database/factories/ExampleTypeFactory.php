@@ -2,27 +2,31 @@
 
 namespace Database\Factories;
 
-use App\Models\Model;
+use App\Modules\ExampleType\Models\ExampleType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Modules\ExampleType\Models\ExampleType>
+ */
 class ExampleTypeFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
-     *
      * @var string
      */
-    protected $model = Model::class;
+    protected $model = ExampleType::class;
 
     /**
      * Define the model's default state.
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->word,
+            'is_active' => $this->faker->boolean(70),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }

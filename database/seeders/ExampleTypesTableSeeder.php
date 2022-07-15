@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Modules\ExampleType\Models\ExampleType;
 use Illuminate\Database\Seeder;
 
 class ExampleTypesTableSeeder extends Seeder
@@ -13,6 +14,6 @@ class ExampleTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        ExampleType::factory()->count(50)->create();
     }
 }

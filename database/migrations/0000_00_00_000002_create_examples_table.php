@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateExamplesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,16 @@ class CreateExamplesTable extends Migration
     {
         Schema::create('examples', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->boolean('is_active')->default(true);
+            $table->unsignedBigInteger('example_type_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('example_type_id')
+                ->references('id')
+                ->on('example_types')
+                ->nullOnDelete();
         });
     }
 
@@ -28,4 +37,4 @@ class CreateExamplesTable extends Migration
     {
         Schema::dropIfExists('examples');
     }
-}
+};

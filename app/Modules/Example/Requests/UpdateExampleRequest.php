@@ -4,6 +4,7 @@ namespace App\Modules\Example\Requests;
 
 use App\Modules\Core\Requests\UpdateFormRequest;
 use Illuminate\Validation\Rule;
+use JetBrains\PhpStorm\ArrayShape;
 
 class UpdateExampleRequest extends UpdateFormRequest
 {
@@ -12,7 +13,13 @@ class UpdateExampleRequest extends UpdateFormRequest
     /**
      * @inheritDoc
      */
-    public function rules()
+    #[ArrayShape([
+        'id' => "array",
+        'name' => "array",
+        'description' => "string[]",
+        'example_type_id' => "array",
+        'is_active' => "string[]"
+    ])] public function rules(): array
     {
         return [
             'id' => [
@@ -22,6 +29,10 @@ class UpdateExampleRequest extends UpdateFormRequest
                 'sometimes',
                 'string',
                 Rule::unique($this->table)->ignore($this->id)
+            ],
+            'description' => [
+                'sometimes',
+                'string',
             ],
             'example_type_id' => [
                 'sometimes',
