@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ExampleTypeFactory extends Factory
 {
+    /**
+     * @var string
+     */
     protected $model = ExampleType::class;
 
     /**

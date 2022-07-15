@@ -13,8 +13,14 @@ use Exception;
 
 class ExampleService
 {
-    public $exampleRepository;
+    /**
+     * @var ExampleInterface
+     */
+    public ExampleInterface $exampleRepository;
 
+    /**
+     * @param ExampleInterface $exampleRepository
+     */
     public function __construct(ExampleInterface $exampleRepository)
     {
         $this->exampleRepository = $exampleRepository;

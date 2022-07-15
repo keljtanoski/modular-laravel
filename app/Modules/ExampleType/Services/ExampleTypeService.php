@@ -16,7 +16,7 @@ class ExampleTypeService
     /**
      * @var ExampleTypeInterface
      */
-    public $exampleTypeRepository;
+    public ExampleTypeInterface $exampleTypeRepository;
 
     /**
      * @param ExampleTypeInterface $exampleTypeRepository

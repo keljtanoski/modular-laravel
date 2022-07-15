@@ -25,7 +25,7 @@ class ExamplesController extends ApiController
     /**
      * @var ExampleService
      */
-    private $exampleService;
+    private ExampleService $exampleService;
 
     /**
      * @param ExampleService $exampleService
