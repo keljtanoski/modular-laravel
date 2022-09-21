@@ -4,6 +4,8 @@ namespace App\Modules\Example\Models;
 
 use App\Modules\Core\Traits\Filterable;
 use App\Modules\ExampleType\Models\ExampleType;
+use Database\Factories\ExampleFactory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -55,6 +57,25 @@ class Example extends Model
     public function example_type(): BelongsTo
     {
         return $this->belongsTo(ExampleType::class);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Factory
+    |--------------------------------------------------------------------------
+    |
+    | Define the factory
+    |
+    */
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return Factory
+     */
+    protected static function newFactory()
+    {
+        return ExampleFactory::new();
     }
 
 }
