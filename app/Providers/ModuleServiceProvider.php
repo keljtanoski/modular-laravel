@@ -21,8 +21,10 @@ class ModuleServiceProvider extends ServiceProvider
     {
         $this->files = $files;
         if (is_dir(app_path(Config::get('modules.default.directory')))) {
-
-            $modules = array_map('class_basename', $this->files->directories(app_path(Config::get('modules.default.directory'))));
+            $modules = array_map(
+                'class_basename',
+                $this->files->directories(app_path(Config::get('modules.default.directory')))
+            );
             foreach ($modules as $module) {
                 // Allow routes to be cached
                 $this->registerModule($module);
@@ -81,8 +83,14 @@ class ModuleServiceProvider extends ServiceProvider
         $types = config("modules.specific.{$module}.routing", config('modules.default.routing'));
         $path = config("modules.specific.{$module}.structure.routes", config('modules.default.structure.routes'));
 
-        $cp = config("modules.specific.{$module}.structure.controllers", config('modules.default.structure.controllers'));
-        $namespace = $this->app->getNamespace() . trim(Config::get('modules.default.directory') . "\\{$module}\\" . implode('\\', explode('/', $cp)), '\\');
+        $cp = config(
+            "modules.specific.{$module}.structure.controllers",
+            config('modules.default.structure.controllers')
+        );
+        $namespace = $this->app->getNamespace() . trim(
+                Config::get('modules.default.directory') . "\\{$module}\\" . implode('\\', explode('/', $cp)),
+                '\\'
+            );
 
         return compact('types', 'path', 'namespace');
     }
@@ -105,14 +113,19 @@ class ModuleServiceProvider extends ServiceProvider
             $file = "{$type}.php";
         }
 
-        $file = str_replace('//', '/', app_path(
-            Config::get('modules.default.directory')
-            . DIRECTORY_SEPARATOR
-            . ($module)
-            . DIRECTORY_SEPARATOR
-            . ($path)
-            . DIRECTORY_SEPARATOR
-            . ($file)));
+        $file = str_replace(
+            '//',
+            '/',
+            app_path(
+                Config::get('modules.default.directory')
+                . DIRECTORY_SEPARATOR
+                . ($module)
+                . DIRECTORY_SEPARATOR
+                . ($path)
+                . DIRECTORY_SEPARATOR
+                . ($file)
+            )
+        );
 
         $allowed = ['web', 'api', 'simple', 'admin'];
         if (in_array($type, $allowed) && $this->files->exists($file)) {
@@ -149,8 +162,14 @@ class ModuleServiceProvider extends ServiceProvider
      */
     protected function prepareComponent(string $module, string $component, string $file = '')
     {
-        $path = config("modules.specific.{$module}.structure.{$component}", config("modules.default.structure.{$component}"));
-        $resource = rtrim(str_replace('//', '/', app_path(Config::get('modules.default.directory') . "/{$module}/{$path}/{$file}")), '/');
+        $path = config(
+            "modules.specific.{$module}.structure.{$component}",
+            config("modules.default.structure.{$component}")
+        );
+        $resource = rtrim(
+            str_replace('//', '/', app_path(Config::get('modules.default.directory') . "/{$module}/{$path}/{$file}")),
+            '/'
+        );
 
         if (!($file && $this->files->exists($resource)) && !(!$file && $this->files->isDirectory($resource))) {
             $resource = false;

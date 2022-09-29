@@ -8,7 +8,7 @@ use JetBrains\PhpStorm\ArrayShape;
 
 class UpdateExampleRequest extends UpdateFormRequest
 {
-    protected $table = 'examples';
+    protected string $table = 'examples';
 
     /**
      * @inheritDoc

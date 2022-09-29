@@ -7,7 +7,7 @@ use Illuminate\Validation\Rule;
 
 abstract class DeleteFormRequest extends FormRequest
 {
-    protected $table = '';
+    protected string $table = '';
 
     /**
      * Determine if the user is authorized to make this request.

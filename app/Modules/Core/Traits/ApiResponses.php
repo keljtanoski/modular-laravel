@@ -2,6 +2,8 @@
 
 namespace App\Modules\Core\Traits;
 
+use App\Exceptions\Handler;
+use App\Modules\Core\Controllers\ApiController;
 use Exception;
 use Illuminate\Http\JsonResponse;
 
@@ -34,7 +36,7 @@ trait ApiResponses
 
     /**
      * @param $message
-     * @return $this
+     * @return Handler|ApiController|ApiResponses
      */
     public function setMessage($message): self
     {
@@ -44,7 +46,7 @@ trait ApiResponses
 
     /**
      * @param $title
-     * @return $this
+     * @return Handler|ApiController|ApiResponses
      */
     public function setTitle($title): self
     {

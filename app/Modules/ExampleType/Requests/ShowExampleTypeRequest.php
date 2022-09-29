@@ -6,5 +6,5 @@ use App\Modules\Core\Requests\ShowFormRequest;
 
 class ShowExampleTypeRequest extends ShowFormRequest
 {
-    protected $table = 'example_types';
+    protected string $table = 'example_types';
 }

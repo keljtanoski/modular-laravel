@@ -7,7 +7,7 @@ use Illuminate\Validation\Rule;
 
 class SearchExampleTypeRequest extends SearchFormRequest
 {
-    protected $table = 'example_types';
+    protected string $table = 'example_types';
 
     /**
      * Get the validation rules that apply to the request.

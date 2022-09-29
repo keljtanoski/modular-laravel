@@ -4,7 +4,7 @@ namespace App\Modules\Core\Requests;
 
 abstract class UpdateFormRequest extends FormRequest
 {
-    protected $table = '';
+    protected string $table = '';
 
     /**
      * Determine if the user is authorized to make this request.
@@ -31,5 +31,5 @@ abstract class UpdateFormRequest extends FormRequest
      *
      * @return array
      */
-    abstract public function rules();
+    abstract public function rules(): array;
 }

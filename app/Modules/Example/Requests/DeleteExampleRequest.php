@@ -6,5 +6,5 @@ use App\Modules\Core\Requests\DeleteFormRequest;
 
 class DeleteExampleRequest extends DeleteFormRequest
 {
-    protected $table = 'examples';
+    protected string $table = 'examples';
 }

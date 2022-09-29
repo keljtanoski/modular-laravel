@@ -4,7 +4,7 @@ namespace App\Modules\Core\Requests;
 
 abstract class SearchFormRequest extends FormRequest
 {
-    protected $table = '';
+    protected string $table = '';
 
     /**
      * Determine if the user is authorized to make this request.

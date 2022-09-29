@@ -7,7 +7,7 @@ use Illuminate\Validation\Rule;
 
 class CreateExampleRequest extends CreateFormRequest
 {
-    protected $table = 'examples';
+    protected string $table = 'examples';
 
     /**
      * @inheritDoc
