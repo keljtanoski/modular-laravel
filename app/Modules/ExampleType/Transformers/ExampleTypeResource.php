@@ -2,10 +2,10 @@
 
 namespace App\Modules\ExampleType\Transformers;
 
+use App\Modules\Core\Transformers\CoreJsonResource;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
 
-class ExampleTypeResource extends JsonResource
+class ExampleTypeResource extends CoreJsonResource
 {
     /**
      * Transform the resource into an array.

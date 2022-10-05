@@ -2,9 +2,9 @@
 
 namespace App\Modules\Example\Exceptions;
 
-use App\Modules\Core\Exceptions\GeneralDestroyException;
+use App\Modules\Core\Exceptions\CoreDestroyException;
 
-class ExampleDestroyException extends GeneralDestroyException
+class ExampleDestroyException extends CoreDestroyException
 {
 
 }

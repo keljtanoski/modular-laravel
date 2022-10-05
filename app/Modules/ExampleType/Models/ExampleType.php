@@ -2,13 +2,13 @@
 
 namespace App\Modules\ExampleType\Models;
 
+use App\Modules\Core\Models\CoreModel;
 use App\Modules\Core\Traits\Filterable;
 use Database\Factories\ExampleTypeFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class ExampleType extends Model
+class ExampleType extends CoreModel
 {
     use HasFactory, Filterable;
 
@@ -61,7 +61,7 @@ class ExampleType extends Model
      *
      * @return Factory
      */
-    protected static function newFactory()
+    protected static function newFactory(): Factory
     {
         return ExampleTypeFactory::new();
     }

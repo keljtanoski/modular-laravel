@@ -2,9 +2,9 @@
 
 namespace App\Modules\ExampleType\Exceptions;
 
-use App\Modules\Core\Exceptions\GeneralSearchException;
+use App\Modules\Core\Exceptions\CoreSearchException;
 
-class ExampleTypeSearchException extends GeneralSearchException
+class ExampleTypeSearchException extends CoreSearchException
 {
 
 }

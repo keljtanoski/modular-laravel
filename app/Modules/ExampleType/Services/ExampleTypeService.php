@@ -2,6 +2,7 @@
 
 namespace App\Modules\ExampleType\Services;
 
+use App\Modules\Core\Services\CoreService;
 use App\Modules\ExampleType\Exceptions\ExampleTypeDestroyException;
 use App\Modules\ExampleType\Exceptions\ExampleTypeIndexException;
 use App\Modules\ExampleType\Exceptions\ExampleTypeNotFoundException;
@@ -11,7 +12,7 @@ use App\Modules\ExampleType\Exceptions\ExampleTypeUpdateException;
 use App\Modules\ExampleType\Interfaces\ExampleTypeInterface;
 use Exception;
 
-class ExampleTypeService
+class ExampleTypeService extends CoreService
 {
     /**
      * @var ExampleTypeInterface

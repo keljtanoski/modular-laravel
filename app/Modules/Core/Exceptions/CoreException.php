@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Log;
 
-class GeneralException extends Exception
+abstract class CoreException extends Exception
 {
     /**
      * Any extra data to send with the response.
@@ -15,18 +15,33 @@ class GeneralException extends Exception
      */
     public $data = [];
 
+    /**
+     * @var int
+     */
     protected $code = 500;
 
+    /**
+     * @var string
+     */
     protected $message = 'Internal system error';
 
+    /**
+     * @var string
+     */
     protected $logMessage = 'Internal system error';
 
+    /**
+     * @var bool
+     */
     protected $log = true;
 
+    /**
+     * @var null
+     */
     protected $exception = null;
 
     /**
-     * GeneralException constructor.
+     * CoreException constructor.
      * @param Exception|null $exception
      * @param array $data
      */
@@ -39,7 +54,7 @@ class GeneralException extends Exception
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function message(): ?string
     {
@@ -74,10 +89,9 @@ class GeneralException extends Exception
      * Set the extra data to send with the response.
      *
      * @param array $data
-     *
      * @return $this
      */
-    public function setData(array $data): GeneralException
+    public function setData(array $data): CoreException
     {
         $this->data = $data;
 
@@ -100,6 +114,10 @@ class GeneralException extends Exception
         $this->message = $message;
     }
 
+    /**
+     * @param $request
+     * @return JsonResponse
+     */
     public function render($request): JsonResponse
     {
         $this->isLog() ? $this->renderLog() : null;
@@ -124,8 +142,9 @@ class GeneralException extends Exception
 
     /**
      * Log error
+     * @return void
      */
-    public function renderLog()
+    public function renderLog(): void
     {
         Log::error(print_r($this->getLogResponse(), true));
     }
@@ -160,23 +179,25 @@ class GeneralException extends Exception
     }
 
     /**
-     * @return int
+     * @return int|string
      */
-    public function line()
+    public function line(): int|string
     {
         return $this->exception ? $this->exception->getLine() : 'none';
     }
 
     /**
-     * @return int
+     * @return int|string
      */
-    public function file()
+    public function file(): int|string
     {
         return $this->exception ? $this->exception->getFile() : 'none';
     }
 
+
     /**
      * Handle an ajax response.
+     * @return JsonResponse
      */
     protected function prepareResponse(): JsonResponse
     {

@@ -2,8 +2,11 @@
 
 namespace App\Modules\Core\Exceptions;
 
-class GeneralUpdateException extends GeneralException
+abstract class CoreUpdateException extends CoreException
 {
+    /**
+     * @var int
+     */
     public $code = 422;
 
     /**

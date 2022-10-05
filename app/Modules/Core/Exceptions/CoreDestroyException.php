@@ -2,8 +2,11 @@
 
 namespace App\Modules\Core\Exceptions;
 
-class GeneralDestroyException extends GeneralException
+abstract class CoreDestroyException extends CoreException
 {
+    /**
+     * @var int
+     */
     public $code = 422;
 
     /**

@@ -2,8 +2,11 @@
 
 namespace App\Modules\Core\Exceptions;
 
-class GeneralSearchException extends GeneralException
+abstract class CoreSearchException extends CoreException
 {
+    /**
+     * @var int
+     */
     public $code = 500;
 
     /**

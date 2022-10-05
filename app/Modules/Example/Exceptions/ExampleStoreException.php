@@ -2,9 +2,9 @@
 
 namespace App\Modules\Example\Exceptions;
 
-use App\Modules\Core\Exceptions\GeneralStoreException;
+use App\Modules\Core\Exceptions\CoreStoreException;
 
-class ExampleStoreException extends GeneralStoreException
+class ExampleStoreException extends CoreStoreException
 {
 
 }

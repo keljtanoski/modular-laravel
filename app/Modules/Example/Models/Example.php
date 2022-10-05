@@ -2,15 +2,15 @@
 
 namespace App\Modules\Example\Models;
 
+use App\Modules\Core\Models\CoreModel;
 use App\Modules\Core\Traits\Filterable;
 use App\Modules\ExampleType\Models\ExampleType;
 use Database\Factories\ExampleFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Example extends Model
+class Example extends CoreModel
 {
     use HasFactory, Filterable;
 
@@ -52,11 +52,13 @@ class Example extends Model
     */
 
     /**
-     * @return BelongsTo
+     * Create a new factory instance for the model.
+     *
+     * @return Factory
      */
-    public function example_type(): BelongsTo
+    protected static function newFactory(): Factory
     {
-        return $this->belongsTo(ExampleType::class);
+        return ExampleFactory::new();
     }
 
     /*
@@ -69,13 +71,11 @@ class Example extends Model
     */
 
     /**
-     * Create a new factory instance for the model.
-     *
-     * @return Factory
+     * @return BelongsTo
      */
-    protected static function newFactory()
+    public function example_type(): BelongsTo
     {
-        return ExampleFactory::new();
+        return $this->belongsTo(ExampleType::class);
     }
 
 }

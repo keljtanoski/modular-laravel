@@ -2,8 +2,11 @@
 
 namespace App\Modules\Core\Exceptions;
 
-class GeneralNotFoundException extends GeneralException
+abstract class CoreNotFoundException extends CoreException
 {
+    /**
+     * @var int
+     */
     public $code = 404;
 
     /**

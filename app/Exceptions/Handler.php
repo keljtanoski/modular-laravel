@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-use App\Modules\Core\Exceptions\GeneralException;
+use App\Modules\Core\Exceptions\CoreException;
 use App\Modules\Core\Traits\ApiResponses;
 use Asm89\Stack\CorsService;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
+use Psr\Log\LogLevel;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -28,7 +29,7 @@ class Handler extends ExceptionHandler
     /**
      * A list of exception types with their corresponding custom log levels.
      *
-     * @var array<class-string<\Throwable>, \Psr\Log\LogLevel::*>
+     * @var array<class-string<Throwable>, LogLevel::*>
      */
     protected $levels = [
         //
@@ -37,10 +38,10 @@ class Handler extends ExceptionHandler
     /**
      * A list of the exception types that are not reported.
      *
-     * @var array<int, class-string<\Throwable>>
+     * @var array<int, class-string<Throwable>>
      */
     protected $dontReport = [
-        GeneralException::class
+        CoreException::class
     ];
 
     /**

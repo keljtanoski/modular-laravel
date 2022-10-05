@@ -21,5 +21,5 @@ abstract class SearchFormRequest extends FormRequest
      *
      * @return array
      */
-    abstract public function rules();
+    abstract public function rules(): array;
 }

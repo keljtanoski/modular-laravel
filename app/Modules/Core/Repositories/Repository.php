@@ -4,7 +4,7 @@ namespace App\Modules\Core\Repositories;
 
 use App\Modules\Core\Interfaces\RepositoryInterface;
 
-class Repository implements RepositoryInterface
+abstract class Repository implements RepositoryInterface
 {
     /**
      * Model::class
@@ -14,7 +14,7 @@ class Repository implements RepositoryInterface
     /**
      * @var array
      */
-    public $filters = [];
+    public array $filters = [];
 
     /**
      * @return mixed

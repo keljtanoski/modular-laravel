@@ -63,18 +63,22 @@ Then run the seeders for the example modules
 app
 ├── Modules
 │   └── Core
+│       ├── Console
+|       |   └── Commands
+│       |       ├── CoreCommand.php
+|       |       └── GenerateModule.php
 │       ├── Controllers
 │       |   ├── ApiController.php
 |       |   └── Controller.php
 │       ├── Exceptions
 │       |   ├── FormRequestTableNotFoundException.php
-│       |   ├── GeneralException.php
-│       |   ├── GeneralIndexException.php
-│       |   ├── GeneralSearchException.php
-│       |   ├── GeneralStoreException.php
-│       |   ├── GeneralNotFoundException.php
-│       |   ├── GeneralDestroyException.php
-|       |   └── GeneralUpdateException.php
+│       |   ├── CoreException.php
+│       |   ├── CoreIndexException.php
+│       |   ├── CoreSearchException.php
+│       |   ├── CoreStoreException.php
+│       |   ├── CoreNotFoundException.php
+│       |   ├── CoreDestroyException.php
+|       |   └── CorreUpdateException.php
 │       ├── Filters
 │       |   ├── QueryFilter.php
 |       |   └── FilterBuilder.php
@@ -85,7 +89,7 @@ app
 │       |   ├── SearchInterface.php
 |       |   └── RepositoryInterface.php
 │       ├── Models
-|       |   └── .gitkeep
+|       |   └── CoreModel.php
 │       ├── Repositories
 |       |   └── Repository.php
 │       ├── Requests
@@ -99,12 +103,14 @@ app
 │       |   └── .gitkeep 
 │       ├── Scopes
 |       |   └── .gitkeep
+│       ├── Services
+│       |   └── CoreService.php 
 │       ├── Traits
 │       |   ├── ApiResponses.php
 |       |   └── Filterable.php
 │       ├── Transformers
-│       |   ├── EmptyResource.php
-|       |   └── EmptyResourceCollection.php
+│       |   ├── CoreJsonResource.php
+|       |   └── CoreResourceCollection.php
 │       └── 
 └── 
 ```

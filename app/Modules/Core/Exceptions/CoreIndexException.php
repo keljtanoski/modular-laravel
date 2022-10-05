@@ -2,8 +2,11 @@
 
 namespace App\Modules\Core\Exceptions;
 
-class GeneralIndexException extends GeneralException
+abstract class CoreIndexException extends CoreException
 {
+    /**
+     * @var int
+     */
     public $code = 500;
 
     /**

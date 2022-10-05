@@ -21,5 +21,5 @@ abstract class CreateFormRequest extends FormRequest
      *
      * @return array
      */
-    abstract public function rules();
+    abstract public function rules(): array;
 }

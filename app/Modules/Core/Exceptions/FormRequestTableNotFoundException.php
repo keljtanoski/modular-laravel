@@ -2,8 +2,11 @@
 
 namespace App\Modules\Core\Exceptions;
 
-class FormRequestTableNotFoundException extends GeneralException
+class FormRequestTableNotFoundException extends CoreException
 {
+    /**
+     * @var int
+     */
     public $code = 404;
 
     /**

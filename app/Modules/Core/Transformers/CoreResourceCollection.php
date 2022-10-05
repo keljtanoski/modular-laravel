@@ -5,7 +5,7 @@ namespace App\Modules\Core\Transformers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class EmptyResourceCollection extends ResourceCollection
+abstract class CoreResourceCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
