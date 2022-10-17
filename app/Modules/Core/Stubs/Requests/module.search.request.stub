@@ -1,0 +1,42 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Modules\Core\Requests\SearchFormRequest;
+use Illuminate\Validation\Rule;
+
+class {{ class }} extends SearchFormRequest
+{
+    protected string $table = '{{ table }}';
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules(): array
+    {
+        return [
+            //Define request rules here
+            'order_by' => [
+                'sometimes',
+                Rule::in([
+                    'id',
+                    'created_at',
+                    'updated_at',
+                ])
+            ],
+            'sort' => [
+                'sometimes',
+                Rule::in([
+                    'asc',
+                    'desc'
+                ])
+            ],
+            'per_page' => [
+                'sometimes',
+                'integer'
+            ]
+        ];
+    }
+}

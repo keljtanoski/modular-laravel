@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Modules\Core\Exceptions\CoreUpdateException;
+
+class {{ class }} extends CoreUpdateException
+{
+
+}

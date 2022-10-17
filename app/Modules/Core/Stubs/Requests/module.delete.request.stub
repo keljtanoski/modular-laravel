@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Modules\Core\Requests\DeleteFormRequest;
+
+class {{ class }} extends DeleteFormRequest
+{
+    protected string $table = '{{ table }}';
+}

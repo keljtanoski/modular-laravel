@@ -1,0 +1,21 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Modules\Core\Requests\CreateFormRequest;
+use Illuminate\Validation\Rule;
+
+class {{ class }} extends CreateFormRequest
+{
+    protected string $table = '{{ table }}';
+
+    /**
+     * @inheritDoc
+     */
+    public function rules(): array
+    {
+        return [
+            //Define the request rules here
+        ];
+    }
+}
