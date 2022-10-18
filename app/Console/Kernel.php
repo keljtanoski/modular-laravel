@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Modules\Core\Console\Commands\GenerateModule;
+use App\Modules\Core\Console\Commands\GenerateModuleController;
 use App\Modules\Core\Console\Commands\GenerateModuleException;
 use App\Modules\Core\Console\Commands\GenerateModuleRequest;
 use Illuminate\Console\Scheduling\Schedule;
@@ -19,6 +20,7 @@ class Kernel extends ConsoleKernel
         GenerateModule::class,
         GenerateModuleException::class,
         GenerateModuleRequest::class,
+        GenerateModuleController::class,
     ];
 
     /**
