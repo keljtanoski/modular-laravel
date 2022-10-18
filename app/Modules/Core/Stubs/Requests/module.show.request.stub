@@ -1,0 +1,13 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Modules\Core\Requests\ShowFormRequest;
+
+class {{ class }} extends ShowFormRequest
+{
+    /**
+     * @var string
+     */
+    protected string $table = '{{ table }}';
+}

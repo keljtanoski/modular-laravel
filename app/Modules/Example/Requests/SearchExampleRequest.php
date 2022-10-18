@@ -7,6 +7,9 @@ use Illuminate\Validation\Rule;
 
 class SearchExampleRequest extends SearchFormRequest
 {
+    /**
+     * @var string
+     */
     protected string $table = 'examples';
 
     /**

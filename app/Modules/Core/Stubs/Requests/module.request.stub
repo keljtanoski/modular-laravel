@@ -2,16 +2,11 @@
 
 namespace {{ namespace }};
 
-use App\Modules\Core\Requests\CreateFormRequest;
+use App\Modules\Core\Requests\CoreFormRequest;
 use Illuminate\Validation\Rule;
 
-class {{ class }} extends CreateFormRequest
+class {{ class }} extends CoreFormRequest
 {
-    /**
-     * @var string
-     */
-    protected string $table = '{{ table }}';
-
     /**
      * Get the validation rules that apply to the request.
      *

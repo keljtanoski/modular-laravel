@@ -1,0 +1,29 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Modules\Core\Requests\UpdateFormRequest;
+use Illuminate\Validation\Rule;
+
+class {{ class }} extends UpdateFormRequest
+{
+    /**
+     * @var string
+     */
+    protected string $table = '{{ table }}';
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules(): array
+    {
+        return [
+            //Define the request rules here
+            'id' => [
+                Rule::exists($this->table, 'id')
+            ],
+        ];
+    }
+}

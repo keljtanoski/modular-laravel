@@ -7,10 +7,15 @@ use Illuminate\Validation\Rule;
 
 class CreateExampleRequest extends CreateFormRequest
 {
+    /**
+     * @var string
+     */
     protected string $table = 'examples';
 
     /**
-     * @inheritDoc
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
      */
     public function rules(): array
     {

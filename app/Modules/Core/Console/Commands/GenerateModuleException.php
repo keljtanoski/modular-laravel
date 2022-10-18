@@ -4,11 +4,19 @@ namespace App\Modules\Core\Console\Commands;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
 #[AsCommand(name: 'module:generate:exception')]
 class GenerateModuleException extends CoreGeneratorCommand
 {
+    /**
+     * The name of argument name.
+     *
+     * @var string
+     */
+    protected $argumentName = 'name';
+
     /**
      * The name and signature of the console command.
      *
@@ -21,7 +29,7 @@ class GenerateModuleException extends CoreGeneratorCommand
      *
      * @var string
      */
-    protected $description = 'Test Something';
+    protected $description = 'Create a new Exception class for the specified module.';
 
     /**
      * Execute the console command.
@@ -52,6 +60,19 @@ class GenerateModuleException extends CoreGeneratorCommand
     }
 
     /**
+     * Resolve the fully-qualified path to the stub.
+     *
+     * @param string $stub
+     * @return string
+     */
+    protected function resolveStubPath(string $stub): string
+    {
+        return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
+            ? $customPath
+            : __DIR__ . $stub;
+    }
+
+    /**
      * Get the console command options.
      *
      * @return array
@@ -75,15 +96,15 @@ class GenerateModuleException extends CoreGeneratorCommand
     }
 
     /**
-     * Resolve the fully-qualified path to the stub.
+     * Get the console command arguments.
      *
-     * @param string $stub
-     * @return string
+     * @return array
      */
-    protected function resolveStubPath(string $stub): string
+    protected function getArguments()
     {
-        return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
-            ? $customPath
-            : __DIR__.$stub;
+        return [
+            ['name', InputArgument::REQUIRED, 'The name of the Exception class.'],
+            ['module', InputArgument::OPTIONAL, 'The name of the Module for which the Exception will be created.'],
+        ];
     }
 }

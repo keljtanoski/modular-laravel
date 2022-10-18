@@ -10,7 +10,9 @@ class CreateExampleTypeRequest extends CreateFormRequest
     protected string $table = 'example_types';
 
     /**
-     * @inheritDoc
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
      */
     public function rules(): array
     {

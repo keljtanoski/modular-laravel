@@ -4,22 +4,20 @@ namespace App\Modules\Example\Requests;
 
 use App\Modules\Core\Requests\UpdateFormRequest;
 use Illuminate\Validation\Rule;
-use JetBrains\PhpStorm\ArrayShape;
 
 class UpdateExampleRequest extends UpdateFormRequest
 {
+    /**
+     * @var string
+     */
     protected string $table = 'examples';
 
     /**
-     * @inheritDoc
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
      */
-    #[ArrayShape([
-        'id' => "array",
-        'name' => "array",
-        'description' => "string[]",
-        'example_type_id' => "array",
-        'is_active' => "string[]"
-    ])] public function rules(): array
+    public function rules(): array
     {
         return [
             'id' => [

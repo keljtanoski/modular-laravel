@@ -17,7 +17,10 @@ class {{ class }} extends SearchFormRequest
     public function rules(): array
     {
         return [
-            //Define request rules here
+            //Define the request rules here
+            'list' => ['sometimes', 'boolean'],
+            'created_at' => ['sometimes'],
+            'updated_at' => ['sometimes'],
             'order_by' => [
                 'sometimes',
                 Rule::in([
