@@ -21,7 +21,7 @@ class GenerateModuleRequest extends CoreGeneratorCommand
      *
      * @var string
      */
-    protected $description = 'Test Something';
+    protected $description = 'Create a new Request class for the specified module.';
 
     /**
      * Execute the console command.

@@ -1,0 +1,167 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Modules\Core\Controllers\ApiController;
+use App\Modules\Core\Helpers\Helper;
+use App\Modules\{{ module }}\Exceptions\{{ module }}DestroyException;
+use App\Modules\{{ module }}\Exceptions\{{ module }}IndexException;
+use App\Modules\{{ module }}\Exceptions\{{ module }}NotFoundException;
+use App\Modules\{{ module }}\Exceptions\{{ module }}StoreException;
+use App\Modules\{{ module }}\Exceptions\{{ module }}UpdateException;
+use App\Modules\{{ module }}\Requests\Create{{ module }}Request;
+use App\Modules\{{ module }}\Requests\Delete{{ module }}Request;
+use App\Modules\{{ module }}\Requests\Search{{ module }}Request;
+use App\Modules\{{ module }}\Requests\Show{{ module }}Request;
+use App\Modules\{{ module }}\Requests\Update{{ module }}Request;
+use App\Modules\{{ module }}\Services\{{ module }}Service;
+use App\Modules\{{ module }}\Transformers\{{ module }}Resource;
+use Exception;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\Response;
+
+class {{ class }} extends ApiController
+{
+    /**
+     * @var {{ module }}Service
+     */
+    private {{ module }}Service ${{ lowercaseModule }}Service;
+
+    /**
+     * @param {{ module }}Service ${{ lowercaseModule }}Service
+     */
+    public function __construct({{ module }}Service ${{ lowercaseModule }}Service)
+    {
+        $this->{{ lowercaseModule }}Service = ${{ lowercaseModule }}Service;
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param Search{{ module }}Request $request
+     * @return AnonymousResourceCollection
+     * @throws {{ module }}IndexException
+     */
+    public function index(Search{{ module }}Request $request)
+    {
+        try {
+            return {{ module }}Resource::collection($this->{{ lowercaseModule }}Service->search($request->validated()));
+        } catch (Exception $exception) {
+            throw new {{ module }}IndexException($exception);
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param Show{{ module }}Request $request
+     * @return JsonResponse
+     * @throws {{ module }}NotFoundException
+     */
+    public function show(Show{{ module }}Request $request)
+    {
+        try {
+            return $this
+                ->setMessage(
+                    __(
+                        'apiResponse.ok',
+                        [
+                            'resource' => Helper::getResourceName(
+                                $this->{{ lowercaseModule }}Service->{{ lowercaseModule }}Repository->model
+                            )
+                        ]
+                    )
+                )
+                ->respond(new {{ module }}Resource($this->{{ lowercaseModule }}Service->getById($request->id)));
+        } catch (Exception $exception) {
+            throw new {{ module }}NotFoundException($exception);
+        }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param Create{{ module }}Request $request
+     * @return JsonResponse
+     * @throws {{ module }}StoreException
+     */
+    public function store(Create{{ module }}Request $request)
+    {
+        try {
+            return $this
+                ->setMessage(
+                    __(
+                        'apiResponse.storeSuccess',
+                        [
+                            'resource' => Helper::getResourceName(
+                                $this->{{ lowercaseModule }}Service->{{ lowercaseModule }}Repository->model
+                            )
+                        ]
+                    )
+                )
+                ->respond(new {{ module }}Resource($this->{{ lowercaseModule }}Service->create($request->validated())));
+        } catch (Exception $exception) {
+            throw new {{ module }}StoreException($exception);
+        }
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Update{{ module }}Request $request
+     * @return JsonResponse
+     * @throws {{ module }}UpdateException
+     */
+    public function update(Update{{ module }}Request $request)
+    {
+        try {
+            return $this
+                ->setMessage(
+                    __(
+                        'apiResponse.updateSuccess',
+                        [
+                            'resource' => Helper::getResourceName(
+                                $this->{{ lowercaseModule }}Service->{{ lowercaseModule }}Repository->model
+                            )
+                        ]
+                    )
+                )
+                ->respond(
+                    new {{ module }}Resource(
+                        $this->{{ lowercaseModule }}Service
+                            ->update($request->validated())
+                    )
+                );
+        } catch (Exception $exception) {
+            throw new {{ module }}UpdateException($exception);
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param Delete{{ module }}Request $request
+     * @return JsonResponse
+     * @throws {{ module }}DestroyException
+     */
+    public function destroy(Delete{{ module }}Request $request)
+    {
+        try {
+            return $this
+                ->setMessage(
+                    __(
+                        'apiResponse.deleteSuccess',
+                        [
+                            'resource' => Helper::getResourceName(
+                                $this->{{ lowercaseModule }}Service->{{ lowercaseModule }}Repository->model
+                            )
+                        ]
+                    )
+                )
+                ->respond($this->{{ lowercaseModule }}Service->delete($request->id));
+        } catch (Exception $exception) {
+            throw new {{ module }}DestroyException($exception);
+        }
+    }
+}

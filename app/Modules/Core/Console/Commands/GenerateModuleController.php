@@ -4,32 +4,24 @@ namespace App\Modules\Core\Console\Commands;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-#[AsCommand(name: 'module:generate:exception')]
-class GenerateModuleException extends CoreGeneratorCommand
+#[AsCommand(name: 'module:generate:controller')]
+class GenerateModuleController extends CoreGeneratorCommand
 {
-    /**
-     * The name of argument name.
-     *
-     * @var string
-     */
-    protected $argumentName = 'name';
-
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'module:generate:exception {--all}';
+    protected $signature = 'module:generate:controller {--all}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new Exception class for the specified module.';
+    protected $description = 'Create a new Controller class for the specified module.';
 
     /**
      * Execute the console command.
@@ -38,7 +30,6 @@ class GenerateModuleException extends CoreGeneratorCommand
      */
     public function handle()
     {
-        dd($this->options(), $this->getArguments());
         return Command::SUCCESS;
     }
 
@@ -58,19 +49,6 @@ class GenerateModuleException extends CoreGeneratorCommand
         }
 
         return $this->resolveStubPath('/stubs/model.stub');
-    }
-
-    /**
-     * Resolve the fully-qualified path to the stub.
-     *
-     * @param string $stub
-     * @return string
-     */
-    protected function resolveStubPath(string $stub): string
-    {
-        return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
-            ? $customPath
-            : __DIR__ . $stub;
     }
 
     /**
@@ -97,15 +75,15 @@ class GenerateModuleException extends CoreGeneratorCommand
     }
 
     /**
-     * Get the console command arguments.
+     * Resolve the fully-qualified path to the stub.
      *
-     * @return array
+     * @param string $stub
+     * @return string
      */
-    protected function getArguments()
+    protected function resolveStubPath(string $stub): string
     {
-        return [
-            ['name', InputArgument::REQUIRED, 'The name of the Exception class.'],
-            ['module', InputArgument::OPTIONAL, 'The name of the Module for which the Exception will be created.'],
-        ];
+        return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
+            ? $customPath
+            : __DIR__.$stub;
     }
 }

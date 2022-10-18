@@ -36,6 +36,8 @@ class ExamplesController extends ApiController
     }
 
     /**
+     * Display a listing of the resource.
+     *
      * @param SearchExampleRequest $request
      * @return AnonymousResourceCollection
      * @throws ExampleIndexException
@@ -50,6 +52,8 @@ class ExamplesController extends ApiController
     }
 
     /**
+     * Display the specified resource.
+     *
      * @param ShowExampleRequest $request
      * @return JsonResponse
      * @throws ExampleNotFoundException
@@ -75,6 +79,8 @@ class ExamplesController extends ApiController
     }
 
     /**
+     * Store a newly created resource in storage.
+     *
      * @param CreateExampleRequest $request
      * @return JsonResponse
      * @throws ExampleStoreException
@@ -100,6 +106,8 @@ class ExamplesController extends ApiController
     }
 
     /**
+     * Update the specified resource in storage.
+     *
      * @param UpdateExampleRequest $request
      * @return JsonResponse
      * @throws ExampleUpdateException
@@ -130,6 +138,8 @@ class ExamplesController extends ApiController
     }
 
     /**
+     * Remove the specified resource from storage.
+     *
      * @param DeleteExampleRequest $request
      * @return JsonResponse
      * @throws ExampleDestroyException
