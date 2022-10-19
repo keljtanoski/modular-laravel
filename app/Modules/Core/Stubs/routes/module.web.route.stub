@@ -1,0 +1,26 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+/**
+ * {{ module }} WEB Routes
+ */
+
+Route::get('{{ lowercaseModulePlural }}', '{{ moduleWebController }}@index')->name('{{ lowercaseModulePlural }}.index');
+Route::get('{{ lowercaseModulePlural }}/create', '{{ moduleWebController }}@create')->name('{{ lowercaseModulePlural }}.create');
+Route::post('{{ lowercaseModulePlural }}', '{{ moduleWebController }}@store')->name('{{ lowercaseModulePlural }}.store');
+Route::get('{{ lowercaseModulePlural }}/{id}', '{{ moduleWebController }}@show')->name('{{ lowercaseModulePlural }}.show');
+Route::get('{{ lowercaseModulePlural }}/{id}/edit', '{{ moduleWebController }}@edit')->name('{{ lowercaseModulePlural }}.edit');
+Route::patch('{{ lowercaseModulePlural }}/{id}', '{{ moduleWebController }}@update')->name('{{ lowercaseModulePlural }}.update');
+Route::delete('{{ lowercaseModulePlural }}/{id}', '{{ moduleWebController }}@destroy')->name('{{ lowercaseModulePlural }}.destroy');

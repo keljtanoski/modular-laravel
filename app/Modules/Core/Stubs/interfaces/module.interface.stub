@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Modules\Core\Interfaces\CoreInterface;
+
+interface {{ class }} extends CoreInterface
+{
+
+}

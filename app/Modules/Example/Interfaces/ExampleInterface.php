@@ -2,7 +2,9 @@
 
 namespace App\Modules\Example\Interfaces;
 
-interface ExampleInterface
+use App\Modules\Core\Interfaces\CoreInterface;
+
+interface ExampleInterface extends CoreInterface
 {
 
 }

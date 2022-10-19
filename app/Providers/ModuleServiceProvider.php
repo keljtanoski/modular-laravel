@@ -41,7 +41,7 @@ class ModuleServiceProvider extends ServiceProvider
      */
     protected function registerModule(string $name): void
     {
-        $enabled = config("modules.specific.{$name}.enabled", true);
+        $enabled = config("modules.specific.$name.enabled", true);
         if ($enabled) {
             $this->registerRoutes($name);
             $this->registerHelpers($name);
@@ -80,15 +80,15 @@ class ModuleServiceProvider extends ServiceProvider
      */
     protected function getRoutingConfig(string $module): array
     {
-        $types = config("modules.specific.{$module}.routing", config('modules.default.routing'));
-        $path = config("modules.specific.{$module}.structure.routes", config('modules.default.structure.routes'));
+        $types = config("modules.specific.$module.routing", config('modules.default.routing'));
+        $path = config("modules.specific.$module.structure.routes", config('modules.default.structure.routes'));
 
         $cp = config(
-            "modules.specific.{$module}.structure.controllers",
+            "modules.specific.$module.structure.controllers",
             config('modules.default.structure.controllers')
         );
         $namespace = $this->app->getNamespace() . trim(
-                Config::get('modules.default.directory') . "\\{$module}\\" . implode('\\', explode('/', $cp)),
+                Config::get('modules.default.directory') . "\\$module\\" . implode('\\', explode('/', $cp)),
                 '\\'
             );
 
@@ -158,16 +158,17 @@ class ModuleServiceProvider extends ServiceProvider
      * @param string $component
      * @param string $file
      *
-     * @return string
+     * @return bool|string
      */
-    protected function prepareComponent(string $module, string $component, string $file = '')
+    protected function prepareComponent(string $module, string $component, string $file = ''): bool|string
     {
         $path = config(
-            "modules.specific.{$module}.structure.{$component}",
-            config("modules.default.structure.{$component}")
+            "modules.specific.$module.structure.$component",
+            config("modules.default.structure.$component")
         );
+
         $resource = rtrim(
-            str_replace('//', '/', app_path(Config::get('modules.default.directory') . "/{$module}/{$path}/{$file}")),
+            str_replace('//', '/', app_path(Config::get('modules.default.directory') . "/$module/$path/$file")),
             '/'
         );
 
@@ -216,7 +217,7 @@ class ModuleServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register a translation file namespace.
+     * Register a filter namespace.
      *
      * @param string $path
      * @param string $namespace
